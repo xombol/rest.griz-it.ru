@@ -5,8 +5,11 @@
 ## Api documentation
 
 ```php
-  POST       api/auth/login .................................................................................................................................................................... auth.login › Api\AuthController@login
-  POST       api/auth/register ........................................................................................................................................................... auth.register › Api\AuthController@register
+ POST       api/auth/login ............................................................ auth.login › Api\Auth\AuthController@login
+  POST       api/auth/register ......................................... auth.register › Api\Auth\RegisteredUserController@register
+  GET|HEAD   api/products .................................................... products.index › Api\Product\ProductController@index
+  GET|HEAD   api/products/filter ........................................... products.filter › Api\Product\ProductController@filter
+
   ```
 
 
