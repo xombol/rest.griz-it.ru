@@ -1,25 +1,14 @@
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://biblioteca.demircu.ru/admin-assets/images/logo/logo.png" width="400" alt="Laravel Logo"></a></p>
-
-
 
 ## Project objective
-Write a library website that will receive books from connected publications via the Api <br>
-There is also a public RESTful API (hereinafter API) for publishing sites, which will allow you to add, modify and delete books from the Library list.
-
+...
 ## Api documentation
 
 ```php
-  GET|HEAD        api/books ......................................... books.index › API\BookController@index
-  POST            api/books ......................................... books.store › API\BookController@store
-  GET|HEAD        api/books/{book} .................................... books.show › API\BookController@show
-  PUT|PATCH       api/books/{book} ................................ books.update › API\BookController@update
-  DELETE          api/books/{book} .............................. books.destroy › API\BookController@destroy
-  GET|HEAD        api/publishers/list ......................... publishers.list › API\BookController@destroy
-```
+  POST       api/auth/login .................................................................................................................................................................... auth.login › Api\AuthController@login
+  POST       api/auth/register ........................................................................................................................................................... auth.register › Api\AuthController@register
+  ```
 
-> Before starting all actions, you will need to clarify your API token With the administrator <br>
-> Example: 12|pIpin8EZeSSqo42wewertetrewwwetwrLrp
 
 ### Registration
 > URL: https://rest.griz-it.ru/api/auth/register <br>
