@@ -46,119 +46,40 @@ There is also a public RESTful API (hereinafter API) for publishing sites, which
 
 ```json
 {
-    "name": "Ivan",
-    "surname": "Ivanov",
-    "email": "ivcenko@mail.ru",
-    "phone": "+79268547485",
-    "password": "5",
-    "password_confirmation": "5"
+    "status": true,
+    "access_token": "8|tnxHXT0254P3EFUOm91O7vLeGbTh5u9oQ9iA4cZ2",
+    "token_type": "Bearer"
 }
 ```
 </p>
 </details>
 
 
-## UPDATE BOOK
-<details><summary>SHOW</summary>
+### Login
+> URL: https://rest.griz-it.ru/api/auth/login <br>
+> METHOD : POST
+<details>
+<summary>sending JSON</summary>
 <p>
 
-> URL: site.ru/api/books/{book} <br>
-> METHOD : PUT|PATCH
-
-#### Пример JSON
 ```json
 {
-    "name":"To Kill a Mockingbird (Paperback)",
-    "description" : "The unforgettable nov...",
-    "isbn" : "978-1-56619-909-4",
-    "authors" : [
-        {
-            "name" : "Harper Lee"
-        },
-        {
-            "name" : "Tomi Lee"
-        }
-    ]
+    "login": "tet@mail.ru | +79854587474",
+    "password": "MainUs92!",
 }
 ```
-
 </p>
 </details>
-
-## SHOW BOOK
-<details><summary>SHOW</summary>
+<details>
+<summary>receiving JSON</summary>
 <p>
 
-> URL: site.ru/api/books/{book} <br>
-> METHOD : GET
-
-#### Пример вывода
 ```json
 {
-    "data": {
-        "name": "Book1343455",
-        "description": "many intresting",
-        "isbn": "33453345",
-        "authors": [
-            {
-                "id": 1,
-                "name": "Jon2 Smit2",
-                "created_at": "2022-11-13T16:41:08.000000Z",
-                "updated_at": "2022-11-13T16:41:08.000000Z"
-            }
-        ]
-    }
+    "status": true,
+    "access_token": "8|tnxHXT0254P3EFUOm91O7vLeGbTh5u9oQ9iA4cZ2",
+    "token_type": "Bearer"
 }
 ```
-
 </p>
 </details>
-
-## DELETE BOOK
-<details><summary>SHOW</summary>
-<p>
-
-> URL: site.ru/api/books/{book} <br>
-> METHOD : DELETE
-
-</p>
-</details>
-
-
-## GET LIST BOOKS
-<details><summary>SHOW</summary>
-<p>
-
-> URL: site.ru/api/publishers/list <br>
-> METHOD : GET
-
-#### Пример вывода
-```json
-[
-    {
-        "id": 10,
-        "publisher_id": 13,
-        "name": "To Kill a Mockingbird (Paperback)",
-        "description": "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it. ...",
-        "isbn": "978-1-56619-909-44",
-        "created_at": "2022-11-13T20:30:05.000000Z",
-        "updated_at": "2022-11-13T20:30:05.000000Z"
-    },
-    {
-        "id": 11,
-        "publisher_id": 13,
-        "name": "To Kill a Mockingbird II",
-        "description": "The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it. ...",
-        "isbn": "978-1-56619-909-41",
-        "created_at": "2022-11-13T20:30:21.000000Z",
-        "updated_at": "2022-11-13T20:30:21.000000Z"
-    }
-]
-```
-
-</p>
-</details>
-
-
-
-Get a list of all available books
