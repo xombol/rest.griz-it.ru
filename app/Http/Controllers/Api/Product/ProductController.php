@@ -33,6 +33,8 @@ class ProductController extends Controller
         // поля
         $columns = ['`properties`.`name`', '`product_properties`.`value`'];
 
+        $keys_coubt = count(array_keys($request->properties));
+
         // переобразуем в массив
         foreach ($request->properties as $key => $prop) {
             foreach ($prop as $item) {
@@ -45,10 +47,10 @@ class ProductController extends Controller
             return "('" . implode("', '", $value) . "')";
         }, $values);
 
-        $products = Product::query()->whereHas('properties', function (Builder $query) use ($columns, $values, $request) {
+        $products = Product::query()->whereHas('properties', function (Builder $query) use ($keys_coubt, $columns, $values, $request) {
             $query->whereRaw(
                 '(' . implode(', ', $columns) . ') in (' . implode(', ', $values) . ')'
-            )->groupBy('product_properties.product_id')->havingRaw('COUNT(*) = 2');
+            )->groupBy('product_properties.product_id')->havingRaw('COUNT(*) =' . $keys_coubt);
 
         })->with('properties')->paginate(40)->toJson();
 
